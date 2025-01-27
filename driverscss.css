@@ -1,0 +1,189 @@
+:root {
+    --mainColor: rgba(233, 18, 190, 0.781);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "navbar"
+        "main"
+        "footer";
+}
+
+
+.drivers-main {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    grid-area: main;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.drivers-main .heading1 {
+    padding: 1.5%;
+    margin: 5% 20%;
+    display: block;
+    width: 100%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    color: var(--mainColor, black);
+    font-weight: lighter;
+    font-size: 4vw;
+    border: .6vw solid var(--mainColor, black);
+    border-width: .6vw .6vw 0 0;
+    border-top-right-radius: 20px;
+}
+
+.drivers-main div {
+    margin: 2vw;
+    border: .25vw solid var(--mainColor, black);
+    border-width: .25vw .25vw 0 0;
+    border-top-right-radius: 20px;
+    position: relative;
+
+}
+
+.driver-img {
+    padding: 5%;
+    width: 25vw;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.drivers-main p {
+    text-transform: uppercase;
+    position: absolute;
+    right: auto;
+    top: 100%;
+    bottom: 0%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 1vw;
+}
+
+.driver-number {
+    padding: 3vw;
+    font-weight: bold;
+    font-size: large;
+    color: black;
+
+}
+
+.info-box {
+    position: relative;
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    top: -120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid var(--mainColor, black);
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    border-radius: 5px;
+}
+
+.drivers-main .max:hover .info-box,
+.drivers-main .lando:hover .info-box,
+.drivers-main .louis:hover .info-box,
+.drivers-main .charles:hover .info-box,
+.drivers-main .carlos:hover .info-box,
+.drivers-main .alonso:hover .info-box,
+.drivers-main .george:hover .info-box {
+    display: block;
+    background-color: #eee;
+    /* Show only when hovering over .max or .lando */
+}
+
+/* add transition */
+
+.drivers-main div:hover {
+    border-color: black;
+}
+
+.heading1:hover {
+    color: black;
+    border-color: black;
+}
+
+@media (max-width: 576px) {
+    .drivers-main {
+        flex-flow: column nowrap;
+        margin: 2%;
+        align-items: center;
+    }
+
+    .driver-img {
+        width: 45vw;
+    }
+
+    .driver-number {
+        font-size: medium;
+    }
+
+    .heading1 {
+        font-size: 7vw;
+        padding: 2%;
+        margin: 15px 5%;
+    }
+
+    .drivers-main p {
+        font-size: 3.5vw;
+        text-align: center;
+    }
+
+    .drivers-main div {
+        margin: 5vw;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .drivers-main {
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    .driver-img {
+        width: 35vw;
+    }
+
+    .driver-number {
+        font-size: large;
+    }
+
+    .heading1 {
+        font-size: 5.5vw;
+    }
+
+    .drivers-main p {
+        font-size: 2.2vw;
+    }
+
+    .drivers-main div {
+        margin: 2vw;
+    }
+}
+
+@media (min-width: 769px) {
+    .drivers-main p {
+        font-size: 1.2vw;
+    }
+
+    .driver-number {
+        font-size: large;
+    }
+
+}

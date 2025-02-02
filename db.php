@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$servername = "192.168.0.100"
+$servername = "192.168.0.100";
 $username = "finallap_finallap";
 $password = "XUEkUcykdthay9zWabf";
 $database = "finallap_finallap";
